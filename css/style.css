@@ -1,6 +1,61 @@
-body{
-    background-color: red;
-    color:blue;
-    font-size: large;
-    font-weight: 500;
+/** ROOT **/
+
+:root{
+    --red: #CA2A34;
+    --black:#141217;
+    --white:#FFF;
+    --brown:#5F191B;
+    --gray:#5D6D6F;
+    --yellow:#EDB27C;
 }
+
+*{
+ 
+    font-family: 'Source Sans Pro', sans-serif;
+
+}
+/** UTILITY**/
+.text-red{
+    color:var(--red);
+}
+.text-blacks{
+    color:var(--black);
+}
+.text-whites{
+    color:var(--white);
+}
+.text-brown{
+    color:var(--brown);
+}
+.text-gray{
+    color:var(--gray);
+}
+.text-yellow{
+    color:var(--yellow);
+}
+/*NAV BAR*/
+.my-navbar{
+   color:var(--red);
+    padding: 10px;
+    background-color: var(--black);
+}
+.logo-img{
+    width: 90px;
+}
+/*MAIN*/
+.main-index{
+    background-color: #5F191B;
+    padding: 30px;
+    height: 80vh;
+}
+
+#email , #password{
+    background:var(--black);
+    color:var(--red);
+}
+input:focus-visible {
+    outline:var(--yellow) auto 1px;
+}
+/* input:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
+} */
