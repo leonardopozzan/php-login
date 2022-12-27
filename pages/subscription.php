@@ -8,12 +8,10 @@ session_start();
 $registered = false;
 $first_name = $last_name = $email = $password = "";
 if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['password'])) {
-    echo 'sono entrato nel primo if';
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    echo $first_name . " " . $last_name . " " .  $email  . " " .  $password;
     $sqlquery = "INSERT INTO users(first_name,last_name,email,password) VALUES('$first_name', '$last_name', '$email','$password')";
     $saved = $conn->query($sqlquery);
     $registered = true;
