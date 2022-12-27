@@ -31,11 +31,12 @@ include_once __DIR__ . '/../partials/head.php';
     ?>
     <main class="main-index">
 
-        <div class="container mt-5">
-            <div class="d-flex">
+        <div class="container mt-5 ">
+            <div class="d-flex align-items-center">
 
                 <div class="col-6">
-                    aoooo
+                    <img src="<?php echo $pathimg  ?>" alt="">
+
                 </div>
                 <div class="col-6">
 
@@ -50,20 +51,31 @@ include_once __DIR__ . '/../partials/head.php';
                     ?>
 
                     <form action="subscription.php" method="post">
-                        <label for="first_name">Nome</label>
-                        <input type="text" name="first_name" required>
+                        <div>
 
-                        <label for="last_name">Cognome</label>
-                        <input type="text" name="last_name" required>
+                            <label class="text-yellow" for="first_name">Nome</label>
+                            <input type="text" name="first_name" required>
+                        </div>
+                        <div>
 
-                        <label for="email">E-mail</label>
-                        <input type="text" name="email" required>
+                            <label class="text-yellow" for="last_name">Cognome</label>
+                            <input type="text" name="last_name" required>
+                        </div>
+                        <div>
 
-                        <label for="password">Password</label>
-                        <input type="password" name="password" required>
+                            <label class="text-yellow" for="email">E-mail</label>
+                            <input type="text" name="email" required>
+                        </div>
+                        <div>
 
-                        <button type="submit">Registrati</button>
-                        <button type="reset">Resetta</button>
+                            <label class="text-yellow" for="password">Password</label>
+                            <input type="password" name="password" required>
+                        </div>
+                        <div>
+
+                            <button type="submit">Registrati</button>
+                            <button type="reset">Resetta</button>
+                        </div>
                     </form>
                 </div>
 
