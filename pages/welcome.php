@@ -7,7 +7,7 @@ session_start();
 
 <body>
     <div class="container mt-5">
-        <h1>Ciao <?php echo $_SESSION['username']  ?> <br> Benvenuto nel nostro sito</h1>
+        <h1 class="ciaociao">Ciao <?php echo $_SESSION['username']  ?> <br> Benvenuto nel nostro sito</h1>
     </div>
 </body>
 
