@@ -25,34 +25,53 @@ include_once __DIR__ . '/../partials/head.php';
 ?>
 
 <body>
-    <div class="container mt-5">
-        <?php
-        if ($registered) {
-            if ($saved) {
-                echo "record inserted successfully";
-            } else {
-                echo "Error: " . $sqlquery . "<br>" . $conn->error;
-            }
-        }
-        ?>
+    <?php
+    $pathimg = "../img/logo_site_ablp-removebg-preview.png";
+    include_once __DIR__ . '/../partials/header.php';
+    ?>
+    <main class="main-index">
 
-        <form action="subscription.php" method="post">
-            <label for="first_name">Nome</label>
-            <input type="text" name="first_name" required>
+        <div class="container mt-5">
+            <div class="d-flex">
 
-            <label for="last_name">Cognome</label>
-            <input type="text" name="last_name" required>
+                <div class="col-6">
+                    aoooo
+                </div>
+                <div class="col-6">
 
-            <label for="email">E-mail</label>
-            <input type="text" name="email" required>
+                    <?php
+                    if ($registered) {
+                        if ($saved) {
+                            echo "record inserted successfully";
+                        } else {
+                            echo "Error: " . $sqlquery . "<br>" . $conn->error;
+                        }
+                    }
+                    ?>
 
-            <label for="password">Password</label>
-            <input type="password" name="password" required>
+                    <form action="subscription.php" method="post">
+                        <label for="first_name">Nome</label>
+                        <input type="text" name="first_name" required>
 
-            <button type="submit">Registrati</button>
-            <button type="reset">Resetta</button>
-        </form>
-    </div>
+                        <label for="last_name">Cognome</label>
+                        <input type="text" name="last_name" required>
+
+                        <label for="email">E-mail</label>
+                        <input type="text" name="email" required>
+
+                        <label for="password">Password</label>
+                        <input type="password" name="password" required>
+
+                        <button type="submit">Registrati</button>
+                        <button type="reset">Resetta</button>
+                    </form>
+                </div>
+
+
+
+            </div>
+        </div>
+    </main>
 
 </body>
 

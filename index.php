@@ -64,6 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php
+    $pathimg = "./img/logo_site_ablp-removebg-preview.png";
     include_once __DIR__ . '/partials/header.php';
     ?>
     <main class="main-index text-yellow
@@ -71,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container d-flex  align-items-center mt-5 ">
             <div class="col-6 text-center
             ">
-                <img src="./img/logo_site_ablp-removebg-preview.png" alt="">
+                <img src="<?php echo $pathimg ?>" alt="">
 
             </div>
             <div class="col-6 ">
