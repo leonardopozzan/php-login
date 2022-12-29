@@ -1,41 +1,39 @@
 <?php
 include_once __DIR__ . '/personal-db/conncection.php';
+include_once __DIR__ . '/functions/functions.php';
 session_start();
-// Check connection
+// Controllo connsessione con data-base
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("<script>console.log('Connection failed: " . $conn->connect_error . "')</script>");
 }
-//form accedi
-// if ($_SERVER["REQUEST_METHOD"] == "POST")
+//variabile pe ril controllo di messaggio d'errore nelle credenziali
+$errorMessage = false;
+
 if (isset($_POST['email'], $_POST['password'])) {
     // $myemail = mysqli_real_escape_string($conn, $_POST['email']);
     // $mypassword = mysqli_real_escape_string($conn, $_POST['password']);
+    $email=$_POST['email'];
+    $password = $_POST['password'];
+    //controlli sui requisiti della mail e password
+    $check_email= str_contains($email, '@') && str_contains($email, '.') && strlen($email) <= 60;
+    $check_pasword = strlen($password) <= 40 && strlen($password) >= 8;
 
-    login($_POST['email'], $_POST['password'], $conn);
-}
+    if($check_pasword && $check_email){
+        //funzione che controlla che l'utente sia registrato e salva dettagli in sessione
+        $login = login($_POST['email'], $_POST['password'], $conn);
 
-function login($email, $password, $conn)
-{
-    $md5password = $password;
-
-    $stmt = $conn->prepare("SELECT `id` , `email` , `first_name` FROM `users` WHERE `email` = ? and `password` = ?");
-    $stmt->bind_param('ss', $email, $md5password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    $num_rows = $result->num_rows;
-
-    if ($num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $_SESSION['userId'] = $row['id'];
-        $_SESSION['userEmail'] = $row['email'];
-        $_SESSION['username'] = $row['first_name'];
-        header("location: pages/welcome.php");
-    } else {
-        echo "Non sei registrato";
-        session_destroy();
+        if($login){
+            header("location: pages/welcome.php");
+        }else {
+            $errorMessage = true;
+        }
+        
+    }else{
+        $errorMessage = true;
     }
 }
+
+
 // Create table query execution
 // $sql = "CREATE TABLE users(
 //     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -95,16 +93,21 @@ function login($email, $password, $conn)
                 <img src="<?php echo $pathimg ?>" alt="">
             </div>
             <div class="col-6 ">
-                <form action="index.php" method="post">
+                <form action="index.php" method="POST">
                     <div>
                         <label for="email">Email</label>
                         <br>
-                        <input type="text" class="input-text" name="email" id="email">
+                        <input type="email" class="input-text" name="email" id="email" required maxlength="60">
                     </div>
                     <div>
                         <label for="password">Password</label>
                         <br>
-                        <input type="text" name="password" id="password">
+                        <input type="password" name="password" id="password" required maxlength="40" minlength="8">
+                        <?php if ($errorMessage) { ?>
+                        <div>
+                            Le credenziali sono errate
+                        </div>
+                        <?php }  ?>
                     </div>
                     <button class="mt-5" type="submit">Accedi</button>
                 </form>

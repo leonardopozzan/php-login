@@ -3,14 +3,14 @@ To do list:
 GRAFICA DA FARE 
 
 PAGINA INDEX
--controlli front-end dei vari input
--controlli back-end dei vari input
-    -email deve essere email (@ e .)
-    -password non vuota e almeno 8 caratteri
--controllo visualizzazione errore per input errati
+x-controlli front-end dei vari input 
+x-controlli back-end dei vari input 
+    x-email deve essere email (@ e .) 
+    x-password non vuota e almeno 8 caratteri
+x-controllo visualizzazione errore per input errati 
 
 PAGINA SUBSCRIPTION
--controlli front-end dei vari input
+x-controlli front-end dei vari input
 -controlli back-end dei vari input
     -nome e cognome almeno tre lettere senza numeri
     -email deve essere email (@ e .)
@@ -20,6 +20,11 @@ PAGINA SUBSCRIPTION
 FEATURES
 -recupero password
 -cambia i tuoi dati (pagina benvenuto)
+
+BONUS
+-considerare la mail sono in minuscolo
+-controlli front-end dinamici inserendo password in subscription
+-cripta password
 
 Domande:
 -La creazione della tabella in php va in errore dopo la prima volta, come si risolve?
