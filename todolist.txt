@@ -1,0 +1,28 @@
+To do list:
+
+GRAFICA DA FARE 
+
+PAGINA INDEX
+-controlli front-end dei vari input
+-controlli back-end dei vari input
+    -email deve essere email (@ e .)
+    -password non vuota e almeno 8 caratteri
+-controllo visualizzazione errore per input errati
+
+PAGINA SUBSCRIPTION
+-controlli front-end dei vari input
+-controlli back-end dei vari input
+    -nome e cognome almeno tre lettere senza numeri
+    -email deve essere email (@ e .)
+    -password almeno 8 caratteri tra maiuscole minuscole e caratteri speciali
+-controllo visualizzazione errore per input errati
+
+FEATURES
+-recupero password
+-cambia i tuoi dati (pagina benvenuto)
+
+Domande:
+-La creazione della tabella in php va in errore dopo la prima volta, come si risolve?
+-Come stampare gli errori di connessione col database?
+-Differente soluzione per i pathimg che non solo gloi stessi nei vari file quando si include un partial.
+-come lavorare in team su db con impostazione diverse (senza php artisan migrate di laravel come si fa?)
